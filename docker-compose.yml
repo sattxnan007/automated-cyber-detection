@@ -1,0 +1,8 @@
+docker run --rm -it -p 80:80 vulnerables/web-dvwa
+
+docker run --rm -it secsi/sqlmap -u "http://host.docker.internal/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=your_cookie_here; security=low" --dbs --batch
+****ต้องเปลี่ยน your_cookie_here เป็นค่า PHPSESSID จริงจาก Browser ของคุณ****
+
+docker ps
+
+docker cp <container_id>:/var/log/apache2/access.log ./dvwa_access.log
